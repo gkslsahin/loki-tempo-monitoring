@@ -1,0 +1,13 @@
+@startuml
+Client -> ReservationService: traceId: TRC1, spanId: SPN1
+ReservationService -> HotelService: traceId: TRC1, spanId: SPN2
+HotelService -> ImageService:traceId: TRC1, spanId: SPN3
+HotelService <-- ImageService: images
+HotelService -> RoomService:traceId: TRC1, spanId: SPN4
+HotelService <-- RoomService: room info
+ReservationService <-- HotelService: HotelDTO
+ReservationService -> PaymentService: traceId: TRC1, spanId: SPN5
+ReservationService <-- PaymentService: payment result
+ReservationService -> EmailService: traceId: TRC1, spanId: SPN6
+Client <-- ReservationService: reservation result
+@enduml

@@ -1,0 +1,18 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: hotel-manager
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+  #logging:
+  #  level:
+#    org.springframework.web: DEBUG
+#no json output for console output debug
+  #pattern:
+#  level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
